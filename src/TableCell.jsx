@@ -1,8 +1,13 @@
 import React from "react";
 
-const TableCell = () => {
+const TableCell = (props) => {
+    const { selectedColor } = props;
+    const handleClick = (e) => {
+        e.target.style.backgroundColor = selectedColor;
+    };
+
     return (
-        <td></td>
+        <td onClick={handleClick}></td>
     );
 };
 

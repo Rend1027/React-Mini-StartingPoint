@@ -26,5 +26,8 @@ body {
 }
 
 td {
-  border : 15px solid white;
+  height: 30px;
+  width: 30px;
+  background-color: white;
+  margin: 1px;
 }

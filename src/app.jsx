@@ -9,7 +9,7 @@ import Table from "./Table";
 const App = () => {
     const [rows, setRows] = useState(5);
     const [columns, setColumns] = useState(4);
-    const [color, setColor] = useState("red");
+    const [selectedColor, setColor] = useState("red");
 
     const addRow = () => {
         setRows(rows + 1);
@@ -26,7 +26,7 @@ const App = () => {
     return (
         <div className="app">
             <h1 className="title">Grid Maker</h1>
-            <Table rows={rows} columns={columns}/>
+            <Table rows={rows} columns={columns} selectedColor={selectedColor}/>
             <section className="button-container">
                 <button onClick={addRow}>Add Row</button>
                 <button onClick={addColumn}>Add Column</button>
