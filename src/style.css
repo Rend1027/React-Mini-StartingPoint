@@ -26,5 +26,19 @@ body {
 }
 
 td {
-  border : 15px solid white;
+  height: 30px;
+  width: 30px;
+  background-color: white;
+  margin: 1px;
+}
+
+.button-container {
+    display: flex;
+    flex-direction: row;
+    gap: 0.3rem;
+    margin-top: 1rem;
+}
+
+button, select{
+    padding: 0 3px;
 }
