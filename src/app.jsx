@@ -19,6 +19,16 @@ const App = () => {
         setColumns(columns + 1);
     }
 
+    const removeRow = () => {
+        if (rows > 1)
+            setRows(rows - 1);
+    }
+
+    const removeColumn = () => {
+        if (columns > 1)
+            setColumns(columns - 1);
+    }
+
     const changeColor = (e) => {
         setColor(e.target.value);
     }
@@ -29,7 +39,9 @@ const App = () => {
             <Table rows={rows} columns={columns} selectedColor={selectedColor}/>
             <section className="button-container">
                 <button onClick={addRow}>Add Row</button>
+                <button onClick={removeRow}>Remove Row</button>
                 <button onClick={addColumn}>Add Column</button>
+                <button onClick={removeColumn}>Remove Column</button>
                 <select id="color-select" onChange={changeColor}>
                     <option value="red">Red</option>
                     <option value="blue">Blue</option>
