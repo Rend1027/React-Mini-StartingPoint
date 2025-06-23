@@ -24,3 +24,7 @@ body {
   justify-content: center;
   min-height: 100vh;
 }
+
+td {
+  border : 15px solid white;
+}
