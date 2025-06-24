@@ -1,13 +1,25 @@
-import React from "react";
+import React, { useContext, useEffect, useState } from "react";
+import { ColorContext } from "./ColorContext";
+import { FillAllContext } from "./FillContext";
 
-const TableCell = (props) => {
-    const { selectedColor } = props;
-    const handleClick = (e) => {
-        e.target.style.backgroundColor = selectedColor;
+const TableCell = () => {
+    const [color, setColor] = useState("");
+    const selectedColor = useContext(ColorContext);
+    const fillState = useContext(FillAllContext);
+    const handleClick = () => {
+        setColor(selectedColor);
     };
 
+    useEffect(() => {
+        setColor(selectedColor);
+    }, [fillState])
+
+    useEffect(() => {
+        setColor(color);
+    }, []);
+
     return (
-        <td onClick={handleClick}></td>
+        <td onClick={handleClick} style={{backgroundColor: color}} ></td>
     );
 };
 
